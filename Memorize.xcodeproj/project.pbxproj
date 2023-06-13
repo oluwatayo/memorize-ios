@@ -11,6 +11,7 @@
 		DCBAD5F42A37D3F000A68E91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBAD5F32A37D3F000A68E91 /* ContentView.swift */; };
 		DCBAD5F62A37D3F200A68E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBAD5F52A37D3F200A68E91 /* Assets.xcassets */; };
 		DCBAD5F92A37D3F200A68E91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBAD5F82A37D3F200A68E91 /* Preview Assets.xcassets */; };
+		DCDB76142A38674100351D7B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DCDB76132A38674100351D7B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		DCBAD5F32A37D3F000A68E91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCBAD5F52A37D3F200A68E91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCBAD5F82A37D3F200A68E91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCDB76132A38674100351D7B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 		DCBAD5E52A37D3EF00A68E91 = {
 			isa = PBXGroup;
 			children = (
+				DCDB76132A38674100351D7B /* .gitignore */,
 				DCBAD5F02A37D3F000A68E91 /* Memorize */,
 				DCBAD5EF2A37D3F000A68E91 /* Products */,
 			);
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCBAD5F92A37D3F200A68E91 /* Preview Assets.xcassets in Resources */,
+				DCDB76142A38674100351D7B /* .gitignore in Resources */,
 				DCBAD5F62A37D3F200A68E91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
