@@ -8,50 +8,63 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis: Array<String> = ["✈️","🚐","🚀","🛵"]
-    var emojiCount = 2
+    let emojis: Array<String> = ["✈️","🚐","🚀","🚌","🥁","🧼","🪬","💊","⚰️","⚱️","💉","💡","📷","📱","🕰️","🐶","🦀","🥉","🎧"]
+    @State var emojiCount = 19
     var body: some View {
-        VStack{
-            HStack{
-                ForEach(emojis[0..<emojiCount], id:\.self, content: {emoji in
-                    CardView(content: emoji)
-                })
+        VStack(){
+            ScrollView(showsIndicators: false){
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
+                    ForEach(emojis[0..<emojiCount], id:\.self, content: {emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    })
+                }
             }
+            Spacer()
             HStack(alignment: .center){
                 remove
                 Spacer()
                 add
-            }.padding([.leading, .trailing], 10.0)
-        }.padding([.leading, .trailing], 10.0)
+            }
+            .font(.largeTitle)
+            .padding(.horizontal)
+        }.padding(.horizontal)
     }
     
     var remove: some View{
-        Button(action: {}, label: {
-            Text("Remove Card")
-        })
+        Button{
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
+        } label: {
+            Image(systemName: "minus.circle")
+        }
     }
     var add: some View{
-        Button(action: {}, label: {Text("Add Card")})
+        Button{
+            if emojiCount < emojis.count {
+                emojiCount += 1
+            }
+        } label: {Image(systemName: "plus.circle")}
     }
 }
 
 struct CardView: View{
     var content: String
-    @State var isFaceUp = false
+    @State var isFaceUp = true
     var body: some View{
         ZStack(alignment: .center){
             let shape = RoundedRectangle(cornerRadius: 20.0)
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
-                shape.stroke(lineWidth: 3.0).foregroundColor(.red)
+                shape.strokeBorder(lineWidth: 3.0).foregroundColor(.red)
                 Text(content)
                     .font(.largeTitle)
             } else {
                 shape.fill().foregroundColor(.red)
             }
             
-        }.padding([.leading, .trailing], 10.0)
-            .foregroundColor(.red)
+        }.foregroundColor(.red)
             .onTapGesture {
                 isFaceUp = !isFaceUp
             }
@@ -61,6 +74,7 @@ struct CardView: View{
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice("iPhone SE (3rd generation)")
             .preferredColorScheme(.light)
         ContentView()
             .preferredColorScheme(.dark)
